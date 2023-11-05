@@ -41,3 +41,6 @@ const String profile = "assets/icons/profile_ic.svg";
 const String searchIC = "assets/icons/search_ic.svg";
 const String calendarIc = "assets/icons/calendar_ic.svg";
 const String dropdownIC = "assets/icons/dropdown_ic.svg";
+
+const String orderIC = "assets/icons/order_ic.svg";
+const String arrowIC = "assets/icons/arrow_ic.svg";

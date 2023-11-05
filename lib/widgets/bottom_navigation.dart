@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mypcot_app/utils/text_style.dart';
 import 'package:provider/provider.dart';
-
 import 'package:mypcot_app/provider/change_tab.dart';
 import 'package:mypcot_app/utils/constants.dart';
 
@@ -14,7 +13,7 @@ class CustomBottomNavigation extends StatelessWidget {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       notchMargin: 10,
-      child: Container(
+      child: SizedBox(
         height: 60,
         child: Consumer<ChnageTab>(
           builder: (BuildContext context, ChnageTab value, Widget? child) {

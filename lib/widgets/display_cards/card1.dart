@@ -155,10 +155,10 @@ class Card1 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              height: 40,
+                              height: 44,
                               width: 78,
                               // color: Colors.amber,
-                              margin: EdgeInsets.only(left: 27),
+                              margin: const EdgeInsets.only(left: 27),
                               child: Stack(
                                 children: [
                                   Container(
@@ -169,7 +169,7 @@ class Card1 extends StatelessWidget {
                                       shape: BoxShape.circle,
                                       border: Border.all(
                                         color: Colors.red,
-                                        width: 3.0,
+                                        width: 4.0,
                                       ),
                                     ),
                                     child: Image.asset(
@@ -186,9 +186,8 @@ class Card1 extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                          color: Colors
-                                              .red, // Set the border color to red
-                                          width: 3.0, // Set the border width
+                                          color: Colors.red,
+                                          width: 3.0,
                                         ),
                                       ),
                                       child: Image.asset(
@@ -290,15 +289,16 @@ class Card1 extends StatelessWidget {
                     height: 100,
                     width: 200,
                     // color: const Color.fromARGB(115, 0, 0, 0),
+                    margin: const EdgeInsets.only(top: 8),
                     alignment: Alignment.topLeft,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          height: 40,
+                          height: 56,
                           width: 106,
-                          // color: Colors.amber,
-                          margin: EdgeInsets.only(left: 26),
+                          margin: const EdgeInsets.only(left: 26),
+                          padding: const EdgeInsets.only(top: 12),
                           child: Stack(
                             children: [
                               Container(
