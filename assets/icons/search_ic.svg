@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g id="search_ic" transform="translate(43 469)">
+    <circle id="Ellipse_635" data-name="Ellipse 635" cx="26" cy="26" r="26" transform="translate(-43 -469)" fill="#fff"/>
+    <path id="search-icon" d="M21.955,24h0l-6.86-6.846V16.069l-.371-.384a8.933,8.933,0,1,1,.96-.96l.384.371h1.084L24,21.956,21.956,24ZM8.92,2.744A6.175,6.175,0,1,0,15.095,8.92,6.183,6.183,0,0,0,8.92,2.744Z" transform="translate(-29 -455)" fill="#2c3d63"/>
+  </g>
+</svg>
