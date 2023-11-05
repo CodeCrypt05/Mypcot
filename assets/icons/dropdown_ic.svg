@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210" height="120" viewBox="0 0 210 120">
+  <defs>
+    <filter id="Rectangle_DS" x="22" y="22" width="180" height="90" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#24415d" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_WS" x="0" y="0" width="210" height="120" filterUnits="userSpaceOnUse">
+      <feOffset dx="-4" dy="-4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="15" result="blur-2"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="dropdown_ic" transform="translate(-578 -67)">
+    <g transform="matrix(1, 0, 0, 1, 578, 67)" filter="url(#Rectangle_DS)">
+      <path id="Rectangle_DS-2" data-name="Rectangle DS" d="M15,0h90a15,15,0,0,1,0,30H15A15,15,0,0,1,15,0Z" transform="translate(49 49)" fill="#edeef2"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 578, 67)" filter="url(#Rectangle_WS)">
+      <path id="Rectangle_WS-2" data-name="Rectangle WS" d="M15,0h90a15,15,0,0,1,0,30H15A15,15,0,0,1,15,0Z" transform="translate(49 49)" fill="#fff"/>
+    </g>
+    <text id="Timeline" transform="translate(650 135)" fill="#2c3d63" font-size="11" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">TIMELINE</tspan></text>
+    <path id="Icon_ionic-md-arrow-dropdown" data-name="Icon ionic-md-arrow-dropdown" d="M9,13.5l6,6,6-6Z" transform="translate(714 114.5)" fill="#5f7096"/>
+  </g>
+</svg>

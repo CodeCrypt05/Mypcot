@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mypcot_app/provider/change_tab.dart';
+import 'package:mypcot_app/widgets/calendar.dart';
 import 'package:mypcot_app/screens/home_screen.dart';
 import 'package:mypcot_app/utils/colors.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
             background: Color.fromARGB(240, 255, 255, 255)),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }

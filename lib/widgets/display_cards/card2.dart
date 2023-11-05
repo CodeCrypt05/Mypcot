@@ -4,23 +4,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mypcot_app/utils/colors.dart';
 import 'package:mypcot_app/utils/constants.dart';
 
-class Card1 extends StatelessWidget {
-  const Card1({super.key});
+class Card2 extends StatelessWidget {
+  const Card2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.pinkAccent,
       child: Stack(
+        alignment: Alignment.topRight,
         children: [
           Container(
             margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: AppColors.blueAccent,
+              color: AppColors.yellow,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   // color: Colors.green,
@@ -32,7 +33,7 @@ class Card1 extends StatelessWidget {
                           margin: const EdgeInsets.all(14),
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            ordersIllustration,
+                            subscriptionsIllustration,
                             width: 140,
                           ),
                         ),
@@ -41,17 +42,18 @@ class Card1 extends StatelessWidget {
                         alignment: Alignment.center,
                         // color: Colors.white,
                         child: Container(
-                          width: 100,
+                          width: 120,
                           height: 36,
-                          margin: const EdgeInsets.only(bottom: 14),
                           alignment: Alignment.center,
+                          margin: const EdgeInsets.only(bottom: 14),
                           decoration: BoxDecoration(
-                            color: Colors.orange,
+                            color: AppColors.blue,
                             borderRadius: BorderRadius.circular(14),
                             shape: BoxShape.rectangle,
                           ),
                           child: Text(
-                            'Orders',
+                            'Subscriptions',
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.roboto(
                               textStyle: const TextStyle(
                                   color: Colors.white,
@@ -67,13 +69,13 @@ class Card1 extends StatelessWidget {
                 // Card tag 2
                 Container(
                   // color: Colors.pinkAccent,
-                  alignment: Alignment.topRight,
+                  alignment: Alignment.topLeft,
                   child: Stack(
                     children: [
                       Container(
-                        // color: Colors.orange,
+                        // color: AppColors.blue,
                         margin: const EdgeInsets.only(right: 10),
-                        padding: const EdgeInsets.only(bottom: 40),
+                        padding: const EdgeInsets.only(bottom: 16),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -82,8 +84,10 @@ class Card1 extends StatelessWidget {
                               children: [
                                 Container(
                                   width: 124,
-                                  height: 88,
-                                  padding: const EdgeInsets.only(top: 12),
+                                  height: 62,
+                                  padding:
+                                      const EdgeInsets.only(top: 6, left: 12),
+                                  margin: const EdgeInsets.only(bottom: 8),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(18),
@@ -100,14 +104,76 @@ class Card1 extends StatelessWidget {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                            MainAxisAlignment.start,
                                         children: [
                                           Text(
-                                            '02 ',
+                                            '10 ',
+                                            style: GoogleFonts.roboto(
+                                              textStyle: TextStyle(
+                                                color: AppColors.blueDeep,
+                                                fontWeight: FontWeight.w800,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            'Active',
+                                            style: GoogleFonts.roboto(
+                                              textStyle: TextStyle(
+                                                color: AppColors.blueLight,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        'Supscriptions',
+                                        style: GoogleFonts.roboto(
+                                          textStyle: TextStyle(
+                                            color: AppColors.blueDeep,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 124,
+                                  height: 62,
+                                  padding:
+                                      const EdgeInsets.only(top: 6, left: 12),
+                                  margin: const EdgeInsets.only(left: 18),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(18),
+                                    shape: BoxShape.rectangle,
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        color: Color.fromARGB(
+                                            179, 75, 75, 75), // Shadow color
+                                        offset: Offset(0, 6), // Shadow offset
+                                        blurRadius: 8, // Shadow blur radius
+                                      ),
+                                    ],
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '199 ',
                                             style: GoogleFonts.roboto(
                                               textStyle: TextStyle(
                                                 color: AppColors.blueDeep,
@@ -128,7 +194,7 @@ class Card1 extends StatelessWidget {
                                         ],
                                       ),
                                       Text(
-                                        'Orders from',
+                                        'Deliveries',
                                         style: GoogleFonts.roboto(
                                           textStyle: TextStyle(
                                             color: AppColors.blueDeep,
@@ -143,63 +209,6 @@ class Card1 extends StatelessWidget {
                               ],
                             ),
                             //////////////////////////
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // color: const Color.fromARGB(115, 0, 0, 0),
-                        padding: EdgeInsets.only(bottom: 20),
-                        margin: const EdgeInsets.only(right: 64),
-                        alignment: Alignment.topRight,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              height: 40,
-                              width: 78,
-                              // color: Colors.amber,
-                              margin: EdgeInsets.only(left: 20),
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    width: 43,
-                                    height: 43,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Colors.red,
-                                        width: 3.0,
-                                      ),
-                                    ),
-                                    child: Image.asset(
-                                      sharukhanPic,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Positioned(
-                                    left: 30,
-                                    child: Container(
-                                      width: 43,
-                                      height: 43,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                          color: Colors
-                                              .red, // Set the border color to red
-                                          width: 3.0, // Set the border width
-                                        ),
-                                      ),
-                                      child: Image.asset(
-                                        salmanPic,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -218,13 +227,14 @@ class Card1 extends StatelessWidget {
                     height: 100,
                     width: 200,
                     // color: Colors.white,
-                    alignment: Alignment.topLeft,
+                    margin: const EdgeInsets.only(right: 50, top: 8),
+                    alignment: Alignment.topRight,
                     child: Container(
                       width: 140,
-                      height: 84,
+                      height: 80,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Colors.orange,
+                        color: AppColors.blue,
                         borderRadius: BorderRadius.circular(18),
                         shape: BoxShape.rectangle,
                         boxShadow: const [
@@ -244,14 +254,7 @@ class Card1 extends StatelessWidget {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: 'You have ',
-                                    style: GoogleFonts.roboto(
-                                      textStyle: const TextStyle(
-                                          color: Colors.white, fontSize: 14),
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '3',
+                                    text: '03',
                                     style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                         color: Colors.white,
@@ -261,7 +264,7 @@ class Card1 extends StatelessWidget {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: ' active',
+                                    text: ' deliveries',
                                     style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                         color: Colors.white,
@@ -270,15 +273,6 @@ class Card1 extends StatelessWidget {
                                     ),
                                   ),
                                 ],
-                              ),
-                            ),
-                            Text(
-                              'orders from',
-                              style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
                               ),
                             ),
                           ],
@@ -291,15 +285,15 @@ class Card1 extends StatelessWidget {
                     height: 100,
                     width: 200,
                     // color: const Color.fromARGB(115, 0, 0, 0),
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.topRight,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          height: 40,
+                          height: 44,
                           width: 106,
                           // color: Colors.amber,
-                          margin: EdgeInsets.only(left: 20),
+                          margin: EdgeInsets.only(right: 16),
                           child: Stack(
                             children: [
                               Container(
@@ -309,7 +303,7 @@ class Card1 extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                    color: Colors.red,
+                                    color: AppColors.blue,
                                     width: 3.0,
                                   ),
                                 ),
@@ -327,9 +321,8 @@ class Card1 extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                      color: Colors
-                                          .red, // Set the border color to red
-                                      width: 3.0, // Set the border width
+                                      color: AppColors.blue,
+                                      width: 3.0,
                                     ),
                                   ),
                                   child: Image.asset(
@@ -347,9 +340,8 @@ class Card1 extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                      color: Colors
-                                          .red, // Set the border color to red
-                                      width: 3.0, // Set the border width
+                                      color: AppColors.blue,
+                                      width: 3.0,
                                     ),
                                   ),
                                   child: Image.asset(

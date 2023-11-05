@@ -16,6 +16,8 @@ const String aishwaryaPic = "assets/images/aishwarya_ic.png";
 const String aaliaPic = "assets/images/alia_ic.png";
 const String raviPic = "assets/images/ravi_ic.png";
 
+const String graphIndicator = "assets/images/graph_ic.svg";
+
 // Icons
 
 const String homeIC = "assets/icons/home_ic.svg";
@@ -37,3 +39,5 @@ const String notification = "assets/icons/notifilcation_bell_ic.svg";
 const String profile = "assets/icons/profile_ic.svg";
 
 const String searchIC = "assets/icons/search_ic.svg";
+const String calendarIc = "assets/icons/calendar_ic.svg";
+const String dropdownIC = "assets/icons/dropdown_ic.svg";
