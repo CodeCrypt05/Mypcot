@@ -27,8 +27,7 @@ void main() {
     ),
   );
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor:
-        Color.fromARGB(255, 255, 255, 255), // Change this to your desired color
+    statusBarColor: Color.fromARGB(255, 255, 255, 255),
   ));
 }
 
@@ -43,12 +42,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.light(
-            primary: Color.fromARGB(236, 255, 255, 255),
+            primary: const Color.fromARGB(236, 255, 255, 255),
             secondary: AppColors.blueLight,
-            background: Color.fromARGB(250, 255, 255, 255)),
+            background: const Color.fromARGB(250, 255, 255, 255)),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Widget> cardWidgets = [Card1(), Card2(), Card3()];
+  List<Widget> cardWidgets = [const Card1(), const Card2(), const Card3()];
 
   @override
   Widget build(BuildContext context) {
@@ -382,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Container(
                   padding: const EdgeInsets.only(
                       left: 8, right: 8, top: 8, bottom: 8),

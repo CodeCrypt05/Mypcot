@@ -13,8 +13,13 @@ class Calendar extends StatefulWidget {
 
 class _CalendarState extends State<Calendar> {
   CalendarFormat week = CalendarFormat.week;
+
+  final DateTime dateTime = DateTime.now();
+  final DateFormat formatter = DateFormat('d');
+  late String formatted = formatter.format(dateTime);
+  late int currentDyIndex = int.parse(formatted);
+
   final int daysToShow = 7;
-  final int currentDayIndex = 3;
 
   String _getDayText(int dayIndex) {
     final currentDate = DateTime.now();
@@ -30,71 +35,70 @@ class _CalendarState extends State<Calendar> {
 
   @override
   Widget build(BuildContext context) {
+    final currentDate = DateTime.now();
     return ListView.builder(
       itemCount: daysToShow,
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
-        final dayIndex = (currentDayIndex - (daysToShow ~/ 2) + index) % 7;
-        final isToday = dayIndex == 6;
+        final dayIndex = (currentDate.day + index) % 7;
+        final isToday = dayIndex == 0;
 
         final dayText = _getDayText(dayIndex);
         final day = dayText.split('\n')[0];
         final date = dayText.split('\n')[1];
 
-        return Expanded(
-          child: Container(
-            margin: const EdgeInsets.only(left: 10, right: 10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
+        return Container(
+          margin: const EdgeInsets.only(left: 10, right: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.only(left: 4),
+                child: Column(
+                  children: [
+                    Text(
+                      date,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.roboto(
+                        textStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight:
+                              isToday ? FontWeight.bold : FontWeight.normal,
+                          color: isToday
+                              ? HexColor('#008080')
+                              : HexColor('#C5D6FC'),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      day,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.roboto(
+                        textStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight:
+                              isToday ? FontWeight.bold : FontWeight.w600,
+                          color: isToday
+                              ? HexColor('#008080')
+                              : HexColor('#2C3D63'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              if (isToday) // Add a dot above today's date
                 Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.only(left: 4),
-                  child: Column(
-                    children: [
-                      Text(
-                        date,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight:
-                                isToday ? FontWeight.bold : FontWeight.normal,
-                            color: isToday
-                                ? HexColor('#008080')
-                                : HexColor('#C5D6FC'),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        day,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight:
-                                isToday ? FontWeight.bold : FontWeight.w600,
-                            color: isToday
-                                ? HexColor('#008080')
-                                : HexColor('#2C3D63'),
-                          ),
-                        ),
-                      ),
-                    ],
+                  width: 8.0,
+                  height: 8.0,
+                  margin: const EdgeInsets.only(left: 6),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: HexColor('#008080'),
                   ),
                 ),
-                if (isToday) // Add a dot above today's date
-                  Container(
-                    width: 8.0,
-                    height: 8.0,
-                    margin: EdgeInsets.only(left: 6),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: HexColor('#008080'),
-                    ),
-                  ),
-              ],
-            ),
+            ],
           ),
         );
       },

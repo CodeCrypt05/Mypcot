@@ -7,7 +7,7 @@ class AppColors {
   static Color greenAccent = HexColor('#31CE95');
   static Color green = HexColor('#0F8181');
   static Color blueDeep = HexColor('#2C3D63');
-  static Color orange = HexColor("#343434");
+  static Color orange = HexColor("#CC5E33");
   static Color blue = HexColor('#234DDC');
   static Color blueLight = HexColor('#5F7096');
   static Color pink = HexColor('#CE316A');
