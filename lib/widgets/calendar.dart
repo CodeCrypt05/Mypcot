@@ -21,10 +21,22 @@ class _CalendarState extends State<Calendar> {
 
   final int daysToShow = 7;
 
+  // String _getDayText(int dayIndex) {
+  //   final currentDate = DateTime.now();
+  //   final firstDayOfWeek =
+  //       currentDate.subtract(Duration(days: currentDate.weekday));
+  //   final calculatedDate = firstDayOfWeek.add(Duration(days: dayIndex));
+
+  //   final formatter = DateFormat('E');
+  //   final dayLabel = formatter.format(calculatedDate);
+
+  //   return '${calculatedDate.day}\n$dayLabel';
+  // }
+
   String _getDayText(int dayIndex) {
     final currentDate = DateTime.now();
-    final firstDayOfWeek = currentDate
-        .subtract(Duration(days: currentDate.weekday - DateTime.monday));
+    final firstDayOfWeek =
+        currentDate.subtract(Duration(days: currentDate.weekday - 1));
     final calculatedDate = firstDayOfWeek.add(Duration(days: dayIndex));
 
     final formatter = DateFormat('E');
@@ -33,6 +45,20 @@ class _CalendarState extends State<Calendar> {
     return '${calculatedDate.day}\n$dayLabel';
   }
 
+  // String _getWeekText(dayIndex) {
+  //   final currentDate = DateTime.now();
+  //   final firstDayOfWeek =
+  //       currentDate.subtract(Duration(days: currentDate.weekday - 1));
+  //   final calculatedDate = firstDayOfWeek.add(Duration(days: dayIndex));
+
+  //   final formatter = DateFormat('E');
+  //   // final weekStart = formatter.format(firstDayOfWeek);
+  //   final dayLabel = formatter.format(calculatedDate);
+
+  //   // return '$weekStart - $weekEnd';
+  //   return '${calculatedDate.day}\n$dayLabel';
+  // }
+
   @override
   Widget build(BuildContext context) {
     final currentDate = DateTime.now();
@@ -40,12 +66,23 @@ class _CalendarState extends State<Calendar> {
       itemCount: daysToShow,
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
-        final dayIndex = (currentDate.day + index) % 7;
-        final isToday = dayIndex == 0;
+        // final dayIndex = (currentDate.day + index) % 7;
+        // final isToday = dayIndex == 0;
 
+        final currentDateIndex = (currentDate.weekday + 6) % 7;
+        print(currentDateIndex);
+
+        final dayIndex = (currentDate.day + index - 2) % 7;
         final dayText = _getDayText(dayIndex);
-        final day = dayText.split('\n')[0];
+        var day = dayText.split('\n')[0];
         final date = dayText.split('\n')[1];
+        // print(date);
+        // print(dayIndex);
+        // print(currentDate.day);
+
+        final isToday = dayIndex == currentDateIndex;
+
+        // final dayText = _getWeekText(dayIndex);
 
         return Container(
           margin: const EdgeInsets.only(left: 10, right: 10),
@@ -58,7 +95,7 @@ class _CalendarState extends State<Calendar> {
                 child: Column(
                   children: [
                     Text(
-                      date,
+                      day,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
@@ -72,16 +109,16 @@ class _CalendarState extends State<Calendar> {
                       ),
                     ),
                     Text(
-                      day,
+                      date,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                           fontSize: 16,
                           fontWeight:
-                              isToday ? FontWeight.bold : FontWeight.w600,
+                              isToday ? FontWeight.bold : FontWeight.normal,
                           color: isToday
                               ? HexColor('#008080')
-                              : HexColor('#2C3D63'),
+                              : HexColor('#C5D6FC'),
                         ),
                       ),
                     ),
